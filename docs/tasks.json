@@ -1,0 +1,131 @@
+{
+  "updated": "2026-10-15",
+  "people": ["John Vu", "Nathan Yu", "Aryan Bhatia", "Mr. Hill"],
+  "facts": [
+    { "label": "Applications close", "value": "Sat, Oct 25" },
+    { "label": "Meetings", "value": "Every other Friday, lunch, GCA" },
+    { "label": "Founding class", "value": "10 to 15 members" }
+  ],
+  "tasks": [
+    {
+      "id": "promote-apps",
+      "title": "Promote member applications on Instagram before they close",
+      "area": "Recruitment",
+      "owner": "",
+      "status": "todo",
+      "priority": "High",
+      "due": "2026-10-25",
+      "note": "Students apply through the link in the @bayu.consulting bio."
+    },
+    {
+      "id": "pick-founders",
+      "title": "Review applications and pick 10 to 15 founding members",
+      "area": "Recruitment",
+      "owner": "",
+      "status": "todo",
+      "priority": "High",
+      "due": "",
+      "note": "Starts after applications close Oct 25."
+    },
+    {
+      "id": "rebrand-v7",
+      "title": "Rebrand all club materials to Bayu Consulting (match Home v7)",
+      "area": "Marketing",
+      "owner": "",
+      "status": "doing",
+      "priority": "Normal",
+      "due": "",
+      "note": "Home v7 is the source of truth. Files live in the shared Bayu Consulting Drive folder."
+    },
+    {
+      "id": "senate-proposal",
+      "title": "Update the Senate proposal to the Bayu Consulting name and v7 facts",
+      "area": "Admin",
+      "owner": "",
+      "status": "todo",
+      "priority": "Normal",
+      "due": "",
+      "note": "Still says Gilbert Consulting Agency."
+    },
+    {
+      "id": "flyers",
+      "title": "Redo both print flyers to match v7",
+      "area": "Marketing",
+      "owner": "",
+      "status": "todo",
+      "priority": "Normal",
+      "due": "",
+      "note": ""
+    },
+    {
+      "id": "slides",
+      "title": "Update early phase and cover slides",
+      "area": "Marketing",
+      "owner": "",
+      "status": "todo",
+      "priority": "Normal",
+      "due": "",
+      "note": "Fix member count (10 to 15), meeting schedule (every other Friday at lunch), add John, add the Oct 25 deadline."
+    },
+    {
+      "id": "site-repo",
+      "title": "Put the Home v7 site design in the bayuconsulting repo",
+      "area": "Website",
+      "owner": "",
+      "status": "todo",
+      "priority": "Normal",
+      "due": "",
+      "note": ""
+    },
+    {
+      "id": "member-fee",
+      "title": "Collect the $25 member fee",
+      "area": "Admin",
+      "owner": "",
+      "status": "todo",
+      "priority": "Normal",
+      "due": "",
+      "note": ""
+    },
+    {
+      "id": "client-comp",
+      "title": "Decide how client businesses compensate the club",
+      "area": "Clients",
+      "owner": "",
+      "status": "todo",
+      "priority": "Normal",
+      "due": "",
+      "note": "Client data stays internal to the club."
+    },
+    {
+      "id": "palette-program",
+      "title": "Draft the Palette growth program for members",
+      "area": "Partnerships",
+      "owner": "",
+      "status": "todo",
+      "priority": "Low",
+      "due": "",
+      "note": "Lets members do real growth work at Palette."
+    },
+    {
+      "id": "carousel",
+      "title": "Make the 5-slide Instagram carousel",
+      "area": "Marketing",
+      "owner": "",
+      "status": "done",
+      "priority": "Normal",
+      "due": "",
+      "note": "Already matches v7."
+    },
+    {
+      "id": "design-system",
+      "title": "Set up the Bayu design system",
+      "area": "Marketing",
+      "owner": "",
+      "status": "done",
+      "priority": "Normal",
+      "due": "",
+      "note": ""
+    }
+  ]
+}

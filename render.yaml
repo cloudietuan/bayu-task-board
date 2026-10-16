@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: bayu-task-server
+    runtime: node
+    plan: free
+    buildCommand: "echo no build needed"
+    startCommand: "node server/index.js"
+    healthCheckPath: /api/health
+    envVars:
+      - key: NOTION_DATA_SOURCE
+        value: 300f4efd-0e5f-4233-bb45-01b97f2d00a5
+      - key: ALLOWED_ORIGINS
+        value: https://cloudietuan.github.io
+      - key: NOTION_TOKEN
+        sync: false
+      - key: TEAM_CODE
+        sync: false

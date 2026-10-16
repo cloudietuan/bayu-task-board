@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bayu Member Board</title>
+<meta name="description" content="Bayu Consulting's shared to-do list: board, list, calendar and canvas views, synced with Notion.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F1E44'/%3E%3Cpath d='M7 20c3-4 6-4 9 0s6 4 9 0' stroke='%23BFD3FF' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="band">
+  <div class="wrap band-inner">
+    <p class="mono on-dark">Bayu Consulting · Member board</p>
+    <h1 class="display">What's on <em>our plate</em></h1>
+    <ul class="facts" id="facts"></ul>
+  </div>
+</header>
+
+<div class="toolbar-wrap">
+  <div class="wrap toolbar">
+    <nav class="tabs" role="tablist" aria-label="Views">
+      <button type="button" role="tab" class="tab" data-view="board" id="tab-board">Board</button>
+      <button type="button" role="tab" class="tab" data-view="list" id="tab-list">List</button>
+      <button type="button" role="tab" class="tab" data-view="calendar" id="tab-calendar">Calendar</button>
+      <button type="button" role="tab" class="tab" data-view="canvas" id="tab-canvas">Canvas</button>
+    </nav>
+    <button type="button" class="btn btn-primary" id="add-btn">Add task</button>
+  </div>
+</div>
+
+<main class="wrap main">
+  <div class="status-line">
+    <span class="sync" id="sync"><span class="dot"></span><span id="sync-text">Loading tasks…</span></span>
+    <a class="notion-link" id="notion-link" href="#" target="_blank" rel="noopener">Open in Notion</a>
+  </div>
+
+  <section class="summary" id="summary" aria-label="Summary"></section>
+
+  <div class="chips" id="chips" role="group" aria-label="Show tasks for"></div>
+
+  <section id="view" class="view" aria-live="polite"></section>
+
+  <footer class="foot">
+    <span class="mono" id="updated"></span>
+    <span>Tasks live in Notion. Claude and other apps can add and update them too.</span>
+  </footer>
+</main>
+
+<dialog id="editor" class="dialog" aria-labelledby="editor-title">
+  <form method="dialog" id="editor-form" class="dialog-body" autocomplete="off">
+    <div class="dialog-head">
+      <h2 class="display-s" id="editor-title">New task</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Close">×</button>
+    </div>
+    <label class="field"><span>Task</span><input id="f-title" name="title" required maxlength="200" placeholder="What needs doing?"></label>
+    <div class="field-row">
+      <label class="field"><span>Status</span>
+        <select id="f-status" name="status"><option value="todo">To do</option><option value="doing">In progress</option><option value="done">Done</option></select>
+      </label>
+      <label class="field"><span>Owner</span><select id="f-owner" name="owner"></select></label>
+    </div>
+    <div class="field-row">
+      <label class="field"><span>Area</span><select id="f-area" name="area"></select></label>
+      <label class="field"><span>Priority</span><select id="f-priority" name="priority"></select></label>
+      <label class="field"><span>Due</span><input id="f-due" name="due" type="date"></label>
+    </div>
+    <label class="field"><span>Notes</span><textarea id="f-note" name="note" rows="3" maxlength="2000" placeholder="Links, details, who to ask"></textarea></label>
+    <p class="form-error" id="f-error" hidden></p>
+    <div class="dialog-foot">
+      <a id="f-notion" class="notion-link" href="#" target="_blank" rel="noopener" hidden>Open in Notion</a>
+      <span class="spacer"></span>
+      <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+      <button type="submit" class="btn btn-primary" id="f-save">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="code-dialog" class="dialog dialog-sm" aria-labelledby="code-title">
+  <form method="dialog" id="code-form" class="dialog-body">
+    <div class="dialog-head">
+      <h2 class="display-s" id="code-title">Team code</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Close">×</button>
+    </div>
+    <p class="muted">Enter the Bayu team code to add or change tasks. You only need to do this once on this device. Ask John if you don't have it.</p>
+    <label class="field"><span>Code</span><input id="code-input" type="password" autocomplete="off" required></label>
+    <p class="form-error" id="code-error" hidden></p>
+    <div class="dialog-foot"><span class="spacer"></span><button type="submit" class="btn btn-primary">Continue</button></div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
